@@ -6,6 +6,10 @@ project(test
     LANGUAGES C
 )
 
+link_directories(
+    ${PROJECT_SOURCE_DIR}/../lib/${ARCH}
+)
+
 add_executable(${PROJECT_NAME} "")
 
 target_sources(${PROJECT_NAME}
@@ -14,12 +18,8 @@ target_sources(${PROJECT_NAME}
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
-    ${LIBSYSTEM_INC_DIR}
-    ${LIBHAL_INC_DIR}
-)
-
-link_directories(
-    ${PROJECT_BINARY_DIR}/lib
+    ${PROJECT_SOURCE_DIR}/../include
+    ${PROJECT_SOURCE_DIR}/../include/pcre
 )
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
@@ -28,6 +28,8 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     rest
     redfish
     -Wl,--no-whole-archive
+    r3
+    pcre
 )
 
 add_dependencies(${PROJECT_NAME} 

@@ -17,11 +17,21 @@ typedef union {
     uint8_t space[32];
 } rest_node_space_t;
 
-#define REST_BIND(_name, _uri, _mask, _handler) \
+
+#define REST_BIND3(_name, _uri, _mask, _handler) \
     static __attribute__((section("rest_node"))) rest_node_space_t __rest_node_##_name = { \
         .node.uri_pattern = _uri, \
         .node.http_method_mask = _mask, \
         .node.handler = _handler, \
     };
 
+#define REST_BIND2(_name, _uri, _mask, _handler) REST_BIND3(_name, _uri, _mask, _handler) \
+
+#define REST_BIND(_uri, _mask, _handler) REST_BIND2(__COUNTER__, _uri, _mask, _handler) \
+
+
+
+int rest_init(void);
+int rest_destroy(void);
+rest_handler rest_handler_find(const char *_uri);
 #endif
