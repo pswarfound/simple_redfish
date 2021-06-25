@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
+
+project(simple_redfish
+    VERSION 1.0.0 
+    LANGUAGES C
+)
+
+set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
+
+add_subdirectory(src)
+add_subdirectory(test)
