@@ -38,7 +38,7 @@ int rest_destroy(void)
     r3_tree_free(n);
 }
 
-rest_handler rest_handler_find(const char *_uri)
+rest_handler rest_handler_find(const char *_uri, int method)
 {
     match_entry * entry;
     R3Route *matched_route;
@@ -46,7 +46,7 @@ rest_handler rest_handler_find(const char *_uri)
     rest_handler handler = NULL;
 
     entry = match_entry_create(_uri);
-    entry->request_method = METHOD_GET;
+    entry->request_method = method;
     matched_route = r3_tree_match_route(n, entry);
     if (matched_route) {
         printf("%s %d\n", __func__, __LINE__);
@@ -75,9 +75,4 @@ rest_handler rest_handler_find(const char *_uri)
     // free the objects at the end
     match_entry_free(entry);
     return handler;
-}
-
-int rest_process(void *p)
-{
-
 }

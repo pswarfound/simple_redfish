@@ -1,14 +1,38 @@
 #include "rest_node.h"
 #include "http.h"
-#include "r3/r3.h"
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+
+typedef struct {
+    const char *method_str;
+    int method;
+} method_map_t;
+method_map_t method_map[] = {
+    {"GET", HTTP_METHOD_GET},
+    {"PUT", HTTP_METHOD_PUT},
+    {"POST", HTTP_METHOD_POST},
+    {"PATCH", HTTP_METHOD_PATCH},
+    {"DELETE", HTTP_METHOD_DELETE},
+    {"HEAD", HTTP_METHOD_HEAD},
+};
 
 int main(int argc, char **argv)
 {
     rest_init();
     do {
-        rest_handler handler = rest_handler_find(argv[1]);
+        int method = 0;
+        int i;
+        for (i = 0; i < sizeof(method_map) / sizeof(method_map[0]);i++) {
+            if (!strcmp(argv[2], method_map[i].method_str)) {
+                method = method_map[i].method;
+                break;
+            }
+        }
+        if (!method) {
+            break;
+        }
+        printf("%x\n", method);
+        rest_handler handler = rest_handler_find(argv[1], method);
         if (handler != NULL) {
             handler(argv[1]);
         }

@@ -33,5 +33,5 @@ typedef union {
 
 int rest_init(void);
 int rest_destroy(void);
-rest_handler rest_handler_find(const char *_uri);
+rest_handler rest_handler_find(const char *_uri, int method);
 #endif
