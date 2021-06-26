@@ -6,14 +6,14 @@ def url_collections_get(_path = None):
     if _path is None:
         _path = os.getcwd() + "/"
     #cmd = 'grep -Rn \\"/redfish/v1 ' + _path + '*.json'
-    cmd = 'grep -Rn \\"/redfish/v1 ' + _path + '*.json|awk \'{print $2}\''
+    cmd = 'grep -Rn \\"/redfish/v1 ' + _path + '/*.json|awk \'{print $2}\''
     #print(cmd)
     child = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
    # child.wait()
     return child.stdout.read()
 
 
-def parse_url(url_collections):
+def create_template_tree(path, url_collections):
     lines = url_collections.split("\n")
     uri_nodes = []
 
@@ -25,27 +25,27 @@ def parse_url(url_collections):
         nodes = line.split("/")
         if len(nodes) > 0:
             uri_nodes.append(nodes[1:])
-        path = os.getcwd() + "/template"
+        node_path = path
         for node in nodes[3:]:
             if len(node) == 0:
                 continue
             if "{" in node:
-                continue;
-            path = os.path.join(path, node)
+                continue
+            node_path = os.path.join(node_path, node)
 #        print(path)
-        cmd = 'mkdir -p ' + path
+        cmd = 'mkdir -p ' + node_path
         child = subprocess.Popen(cmd, shell=True)
 
-        path = os.getcwd() + "/template"
+        node_path = path
         for node in nodes[3:]:
             if len(node) == 0:
                 continue
             if "{" in node:
 #                print(path)
-                cmd = 'touch ' + path + "/id"
+                cmd = 'touch ' + node_path + "/id"
                 child = subprocess.Popen(cmd, shell=True)
-                continue;
-            path = os.path.join(path, node)
+                continue
+            node_path = os.path.join(node_path, node)
     return uri_nodes
 #        print(nodes[3:])
 
@@ -66,7 +66,7 @@ def create_node_file(path, uri_list):
             ff = uri[node_start + 1:].replace("-", "_")
         else:
             ff = uri[node_parent_start + 1:node_start].replace("-", "_") + "_id"
-
+        ff = ff.replace("$", "")
         cfile.write("""
 static int rest_""" + ff.lower() + """_handler(void *p, rest_node_rw_t *rw)
 {
@@ -88,8 +88,14 @@ static int rest_""" + ff.lower() + """_handler(void *p, rest_node_rw_t *rw)
 def create_rest_file(path, lv, uri_pattern):
 
     is_collection = False
-
-    if lv != 1:
+    if lv == 1:
+        uri_pattern_list = [
+            "/redfish",
+            "/redfish/v1",
+            "/redfish/v1/$metadata",
+        ]
+        create_node_file(path + "/root.c", uri_pattern_list)
+    else:
         create_node_file(path + "/node.c", [uri_pattern])
         if os.path.exists(os.path.join(path, "id")):
             uri_pattern += "/{id}"
@@ -103,8 +109,6 @@ def create_rest_file(path, lv, uri_pattern):
             create_rest_file(cur_path, lv + 1, cur_uri_pattern)
 
 def create_cmake(path):
-    cmd = "touch " + path + "/CMakeLists.txt"
-    subprocess.Popen(cmd, shell=True)
     f = open(path + "/CMakeLists.txt", 'w')
     f.write("""
 cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
@@ -129,25 +133,49 @@ target_include_directories(${PROJECT_NAME}
 )
 """)
     f.write("aux_source_directory(${CMAKE_CURRENT_LIST_DIR} _SRC)\n")
+    f.write("\n")
 
-    list_dirs = os.walk(path) 
-    for root, dirs, files in list_dirs: 
-        for d in dirs: 
+    list_dirs = os.walk(path)
+    dir_list = []
+    lv1_keys = []
+    for root, dirs, files in list_dirs:
+        for d in dirs:
             p = os.path.join(root, d)
             p = p[len(path):]
-            f.write("aux_source_directory(${CMAKE_CURRENT_LIST_DIR}" + p + " _SRC)\n")
+            dir_list.append(p)
+            keys = p.split("/")
+            if keys[1] not in lv1_keys:
+                lv1_keys.append(keys[1])
+    dir_list.sort()
+#    print(lv1_keys)
+    for key in lv1_keys:
+        f.write("OPTION(" + key.upper() + " \"\" OFF)\n")
+
+    f.write("\n")
+
+    lv1_keys = []
+    for d in dir_list:
+        key = d.split("/")[1]
+        if key not in lv1_keys:
+            if len(lv1_keys) != 0:
+                f.write("endif()\n\n")
+            f.write("if(" + key.upper() + ")\n")
+            lv1_keys.append(key)
+        f.write("aux_source_directory(${CMAKE_CURRENT_LIST_DIR}" + d + " _SRC)\n")
+    f.write("endif()\n\n")
+
     f.write('''
 target_sources(${PROJECT_NAME}
     PRIVATE
     ${_SRC}
 )
     ''')
+
     f.close()
 
 if __name__ == '__main__':
-    url_collections = url_collections_get()
+    url_collections = url_collections_get(os.getcwd() + "/schema")
 #    print(url_collections)
-    template_info = parse_url(url_collections)
-    #print(template_info)
+    create_template_tree(os.getcwd() + "/template", url_collections)
     create_cmake(os.getcwd() + "/template")
     create_rest_file(os.getcwd() + "/template", 1, "/redfish/v1")
