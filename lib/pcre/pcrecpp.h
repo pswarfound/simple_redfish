@@ -658,8 +658,6 @@ class PCRECPP_EXP_DEFN RE {
  private:
 
   void Init(const string& pattern, const RE_Options* options);
-  // Old version from PCRE 6.x, for compatibility
-  void Init(const char *pattern, const RE_Options* options);
   void Cleanup();
 
   // Match against "text", filling in "vec" (up to "vecsize" * 2/3) with

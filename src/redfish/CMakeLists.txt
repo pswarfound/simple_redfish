@@ -18,8 +18,8 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 target_sources(${PROJECT_NAME}
     PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/redfish_root.c
-    ${CMAKE_CURRENT_LIST_DIR}/redfish_systems.c
-    ${CMAKE_CURRENT_LIST_DIR}/redfish_managers.c
+    #${CMAKE_CURRENT_LIST_DIR}/redfish_systems.c
+    #${CMAKE_CURRENT_LIST_DIR}/redfish_managers.c
 )
 
 target_include_directories(${PROJECT_NAME} 

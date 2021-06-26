@@ -1,0 +1,193 @@
+memory.lo: memory.c \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdc-predef.h \
+ ../config.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/assert.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/features.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/cdefs.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/wordsize.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/gnu/stubs.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/errno.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/errno.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/linux/errno.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/asm/errno.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/asm-generic/errno.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/asm-generic/errno-base.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/fcntl.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/types.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/typesizes.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/fcntl.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/fcntl-linux.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/uio.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/types.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/time.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/lib/gcc/arm-soft-linux-gnueabi/4.9.4/include/stddef.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/endian.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/endian.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/byteswap.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/byteswap-16.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/select.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/select.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/sigset.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/time.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/sysmacros.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stat.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdio.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/libio.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/_G_config.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/wchar.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/lib/gcc/arm-soft-linux-gnueabi/4.9.4/include/stdarg.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/sys_errlist.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdio.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/lib/gcc/arm-soft-linux-gnueabi/4.9.4/include/stdint.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdint.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/wchar.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdlib.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/waitflags.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/waitstatus.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/xlocale.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/alloca.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdlib-bsearch.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdlib-float.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/string.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/string.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/string2.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/mman.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/mman.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/mman-linux.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/unistd.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/posix_opt.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/environments.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/confname.h \
+ /mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/getopt.h \
+ ../include/memory.h
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdc-predef.h:
+
+../config.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/assert.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/features.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/cdefs.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/wordsize.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/gnu/stubs.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/gnu/stubs-soft.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/errno.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/errno.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/linux/errno.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/asm/errno.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/asm-generic/errno.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/asm-generic/errno-base.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/fcntl.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/types.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/typesizes.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/fcntl.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/fcntl-linux.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/uio.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/types.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/time.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/lib/gcc/arm-soft-linux-gnueabi/4.9.4/include/stddef.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/endian.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/endian.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/byteswap.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/byteswap-16.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/select.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/select.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/sigset.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/time.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/sysmacros.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/pthreadtypes.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stat.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdio.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/libio.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/_G_config.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/wchar.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/lib/gcc/arm-soft-linux-gnueabi/4.9.4/include/stdarg.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdio_lim.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/sys_errlist.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdio.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/lib/gcc/arm-soft-linux-gnueabi/4.9.4/include/stdint.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdint.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/wchar.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/stdlib.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/waitflags.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/waitstatus.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/xlocale.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/alloca.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdlib-bsearch.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/stdlib-float.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/string.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/string.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/string2.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/sys/mman.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/mman.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/mman-linux.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/unistd.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/posix_opt.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/environments.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/bits/confname.h:
+
+/mnt/ram0/bmc/work/workspace/tools/arm-soft-linux-gnueabi/arm-soft-linux-gnueabi/sysroot/usr/include/getopt.h:
+
+../include/memory.h:

@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 {
     rest_init();
     do {
+//        break;
         int method = 0;
         int i;
         for (i = 0; i < sizeof(method_map) / sizeof(method_map[0]);i++) {
@@ -31,11 +32,16 @@ int main(int argc, char **argv)
         if (!method) {
             break;
         }
-        printf("%x\n", method);
-        rest_handler handler = rest_handler_find(argv[1], method);
-        if (handler != NULL) {
-            handler(argv[1]);
+
+        http_priv_t http = http_create();
+        for (i = 0; i < 1;i++) {
+            http->method = method;
+            rest_handler handler = rest_handler_find(argv[1], method);
+            if (handler != NULL) {
+                handler(http);
+            }
         }
+        http_free((http_t*)&http);
     } while(0);
 
     rest_destroy();

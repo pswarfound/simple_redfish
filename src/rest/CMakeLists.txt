@@ -14,6 +14,7 @@ add_library("simple_redfish::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 target_link_libraries(${PROJECT_NAME} PUBLIC 
     "simple_redfish::http"
     "simple_redfish::util"
+    "simple_redfish::r3"
 )
 
 target_sources(${PROJECT_NAME}
@@ -24,6 +25,4 @@ target_sources(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} 
     PUBLIC 
     ${CMAKE_CURRENT_LIST_DIR}
-    ${PROJECT_SOURCE_DIR}/../../include
-    ${PROJECT_SOURCE_DIR}/../../include/pcre
 )

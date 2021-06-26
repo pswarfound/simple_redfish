@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "rest_node.h"
 #include "http.h"
-#include "r3/r3.h"
+#include "r3.h"
 
 #define REST_NODE_FOR_EACH(_p) \
     for (_p = (rest_node_t*)&__start_rest_node; \
