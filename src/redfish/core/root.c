@@ -45,3 +45,17 @@ static int rest_metadata_handler(void *p, rest_node_rw_t *rw)
 }
 
 REST_BIND("/redfish/v1/$metadata", HTTP_METHOD_GET, rest_metadata_handler);
+
+static int rest_odata_handler(void *p, rest_node_rw_t *rw)
+{
+    printf("%s %d\n", __func__, __LINE__);
+
+    switch(http_method_get(p)) {
+        case HTTP_METHOD_GET:
+            return 0;
+        default:
+            return -1;
+    }
+}
+
+REST_BIND("/redfish/v1/odata", HTTP_METHOD_GET, rest_odata_handler);
