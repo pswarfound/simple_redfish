@@ -6,8 +6,8 @@
 #define REST_MAX_ID_NUM     3
 #define REST_MAX_ID_LEN     32
 
-struct rest_node_rw_tag;
-typedef int (*rest_handler)(void *, struct rest_node_rw_tag *);
+typedef struct rest_node_rw_tag rest_node_rw_t;
+typedef int (*rest_handler)(void *, rest_node_rw_t *);
 
 typedef struct {
     const char *uri_pattern;

@@ -20,7 +20,6 @@ int main(int argc, char **argv)
 {
     rest_init();
     do {
-//        break;
         int method = 0;
         int i;
         for (i = 0; i < sizeof(method_map) / sizeof(method_map[0]);i++) {

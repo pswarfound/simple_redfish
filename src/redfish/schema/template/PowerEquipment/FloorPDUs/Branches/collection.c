@@ -1,2 +1,0 @@
-#include "rest_node.h"
-REST_NODE("/redfish/v1UpdateServiceTelemetryServiceTaskServiceSystems/{id}Storage/{id}SessionService/{id}ResourceBlocks/{id}Registries/{id}PowerEquipment/{id}Sensors/{id}Switchgear/{id}TransferSwitches/{id}FloorPDUs/{id}Sensors/{id}Metrics/{id}Outlets/{id}Subfeeds/{id}Branches",,);
