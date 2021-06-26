@@ -329,11 +329,11 @@ if __name__ == '__main__':
     schema_dir = os.getcwd() + "/schema"
     template_dir = os.getcwd() + "/template"
 
-    #url_collections = url_collections_get(schema_dir)
+    url_collections = url_collections_get(schema_dir)
 #    print(url_collections)
-    #create_template_tree(template_dir, url_collections)
-    #create_cmake(template_dir)
-    #create_rest_file(template_dir, 1, "/redfish/v1")
+    create_template_tree(template_dir, url_collections)
+    create_cmake(template_dir)
+    create_rest_file(template_dir, 1, "/redfish/v1")
     action_list = collect_actions(schema_dir, template_dir)
     for k, v in action_list.items():
         if len(v['actions']) == 0:
@@ -341,3 +341,6 @@ if __name__ == '__main__':
     pp = pprint.PrettyPrinter(indent=2)
     pp.pprint(action_list)
     create_action_node(action_list, template_dir)
+
+    cmd = 'find ' + template_dir + ' -name id -type f|xargs rm'
+    child = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
