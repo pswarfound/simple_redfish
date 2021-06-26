@@ -36,9 +36,10 @@ int main(int argc, char **argv)
         http_priv_t http = http_create();
         for (i = 0; i < 1;i++) {
             http->method = method;
-            rest_handler handler = rest_handler_find(argv[1], method);
-            if (handler != NULL) {
-                handler(http);
+            rest_node_rw_t rw;
+            int ret = rest_handler_find(argv[1], method, &rw);
+            if (rw.handler != NULL) {
+                rw.handler(http, &rw);
             }
         }
         http_free((http_t*)&http);

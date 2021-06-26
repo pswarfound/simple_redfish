@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-static int rest_root_handler(void *p)
+static int rest_root_handler(void *p, rest_node_rw_t *rw)
 {
     printf("%s %d\n", __func__, __LINE__);
 

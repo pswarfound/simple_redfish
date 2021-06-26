@@ -3,20 +3,27 @@
 #include <stdint.h>
 #include <stddef.h>
 
-typedef int (*rest_handler)(void *);
+#define REST_MAX_ID_NUM     3
+#define REST_MAX_ID_LEN     32
 
-typedef struct rest_node_tag {
+struct rest_node_rw_tag;
+typedef int (*rest_handler)(void *, struct rest_node_rw_tag *);
+
+typedef struct {
     const char *uri_pattern;
     rest_handler handler;
     uint8_t http_method_mask;
-    uint8_t res[];
-} rest_node_t;
+} rest_node_ro_t;
 
 typedef union {
-    rest_node_t node;
+    rest_node_ro_t node;
     uint8_t space[32];
 } rest_node_space_t;
 
+typedef struct rest_node_rw_tag {
+    rest_handler handler;
+    char id[REST_MAX_ID_NUM][REST_MAX_ID_LEN];
+} rest_node_rw_t;
 
 #define REST_BIND3(_name, _uri, _mask, _handler) \
     static __attribute__((section("rest_node"))) rest_node_space_t __rest_node_##_name = { \
@@ -33,5 +40,5 @@ typedef union {
 
 int rest_init(void);
 int rest_destroy(void);
-rest_handler rest_handler_find(const char *_uri, int method);
+int rest_handler_find(const char *_uri, const int method, rest_node_rw_t *rw);
 #endif

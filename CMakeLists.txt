@@ -12,8 +12,7 @@ if (${ARCH} STREQUAL "arm")
 endif()
 
 project(simple_redfish
-    VERSION 1.0.0 
-    LANGUAGES C
+    VERSION 1.0.0
 )
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)

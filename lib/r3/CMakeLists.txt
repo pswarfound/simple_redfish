@@ -16,7 +16,7 @@ add_library(${PROJECT_NAME})
 add_library("simple_redfish::${PROJECT_NAME}" ALIAS ${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
-    pcre
+    "simple_redfish::pcre"
 )
 
 target_sources(${PROJECT_NAME}
