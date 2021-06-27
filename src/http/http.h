@@ -13,16 +13,17 @@ typedef enum {
 } http_method_mask_t;
 
 typedef void * http_t;
+typedef void * con_t;
+
+typedef void (*http_handler_t)(con_t con);
 
 http_t http_create(void);
-void http_free(http_t*);
-uint8_t http_method_get(http_t p);
+int http_start(http_t http, http_handler_t handler);
+int http_destroy(http_t http);
 
+uint8_t http_method_get(con_t p);
+const char *http_uri_get(con_t p);
 
-typedef struct {
+int http_printf(con_t con, const char *fmt, ...);
 
-    uint8_t method;
-    uint8_t buffer[256];
-    uint8_t buffered_len;
-} *http_priv_t;
 #endif

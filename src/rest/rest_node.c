@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "rest_node.h"
-#include "http.h"
 #include "r3.h"
 
 #define REST_NODE_FOR_EACH(_p) \
